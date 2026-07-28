@@ -1,0 +1,50 @@
+appId: io.github.onlyguo.api-studio
+productName: API Studio
+copyright: Copyright © 2026 onlyguo
+
+directories:
+  output: release
+  buildResources: build
+
+files:
+  - dist/**/*
+  - dist-electron/**/*
+  - package.json
+
+asar: true
+compression: normal
+artifactName: ${productName}-${version}-${os}-${arch}.${ext}
+
+mac:
+  icon: build/icon.png
+  category: public.app-category.developer-tools
+  hardenedRuntime: true
+  notarize: true
+  entitlements: build/entitlements.mac.plist
+  entitlementsInherit: build/entitlements.mac.inherit.plist
+  target:
+    - dmg
+    - zip
+
+dmg:
+  title: ${productName} ${version}
+
+win:
+  icon: build/icon.png
+  target:
+    - nsis
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+
+linux:
+  icon: build/icon.png
+  category: Development
+  maintainer: onlyguo
+  synopsis: Local-first API debugging workbench
+  target:
+    - AppImage
+    - deb

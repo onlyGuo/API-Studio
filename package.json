@@ -1,0 +1,42 @@
+{
+  "name": "api-studio",
+  "productName": "API Studio",
+  "version": "0.1.0",
+  "description": "A local-first IDEA-style API debugging workbench",
+  "author": "onlyguo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/onlyguo/api-studio.git"
+  },
+  "homepage": "https://github.com/onlyguo/api-studio#readme",
+  "bugs": "https://github.com/onlyguo/api-studio/issues",
+  "main": "dist-electron/main.js",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "concurrently -k \"vite\" \"wait-on http://127.0.0.1:5173 && VITE_DEV_SERVER_URL=http://127.0.0.1:5173 electron .\"",
+    "build": "vue-tsc --noEmit && vite build && tsc -p electron/tsconfig.json",
+    "dist": "npm run build && electron-builder --publish never",
+    "preview": "vite preview",
+    "start": "electron ."
+  },
+  "dependencies": {
+    "@vueuse/core": "^13.5.0",
+    "lucide-vue-next": "^0.468.0",
+    "monaco-editor": "^0.52.2",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "concurrently": "^9.1.2",
+    "electron": "^43.2.0",
+    "electron-builder": "^26.15.3",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5",
+    "vue-tsc": "^3.3.8",
+    "wait-on": "^8.0.1"
+  }
+}
