@@ -180,7 +180,7 @@ npm start
 
 ## 自动构建与发布
 
-推送 `v0.1.0` 这类语义化版本标签后，会自动启动 [发布工作流](./.github/workflows/release.yml)。标签中的版本必须与 `package.json` 完全一致。全部任务成功后，GitHub Actions 会创建 Release、附带 SHA-256 校验文件，并发布以下安装包：
+推送任意 Git 标签后都会自动启动 [发布工作流](./.github/workflows/release.yml)。`v0.1.0`、`beta`、`nightly-2026-07-28` 以及包含 `/` 的标签都可以使用。全部任务成功后，GitHub Actions 会创建 Release、附带 SHA-256 校验文件，并发布以下安装包：
 
 - 同时支持 Intel 与 Apple Silicon 的 macOS 通用 DMG 和 ZIP；使用 Developer ID 签名、提交 Apple 公证并装订公证票据
 - Windows x64 NSIS 安装程序
@@ -201,17 +201,14 @@ macOS 签名信息缺失时，工作流会主动失败，不会悄悄发布未�
 base64 -i DeveloperIDApplication.p12 | pbcopy
 ```
 
-修改并提交项目版本后即可创建发布标签：
+可以使用任意名称创建发布标签：
 
 ```bash
-npm version patch --no-git-tag-version
-git add package.json package-lock.json
-git commit -m "release: v0.1.1"
-git tag v0.1.1
-git push origin main --follow-tags
+git tag nightly-2026-07-28
+git push origin nightly-2026-07-28
 ```
 
-不要把证书或密码提交到仓库。electron-builder 会把 `APPLE_CERTIFICATE` 导入自己管理的临时钥匙串，因此当前的 `KEYCHAIN_PASSWORD` 不需要被工作流读取；`APPLE_PASSWORD` 必须是在 appleid.apple.com 创建的应用专用密码，而不是 Apple ID 登录密码。
+标签名称决定 GitHub Release 的名称；应用和安装包内部版本仍取自 `package.json`，因为桌面安装包格式要求合法的应用版本。不要把证书或密码提交到仓库。electron-builder 会把 `APPLE_CERTIFICATE` 导入自己管理的临时钥匙串，因此当前的 `KEYCHAIN_PASSWORD` 不需要被工作流读取；`APPLE_PASSWORD` 必须是在 appleid.apple.com 创建的应用专用密码，而不是 Apple ID 登录密码。
 
 ## 技术栈
 

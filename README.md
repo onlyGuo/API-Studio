@@ -181,7 +181,7 @@ You can also run `npm run preview` for a browser preview. In that mode, requests
 
 ## Automated releases
 
-Pushing a semantic version tag such as `v0.1.0` starts the [release workflow](./.github/workflows/release.yml). The tag version must exactly match `package.json`. After all jobs succeed, GitHub Actions creates a release with SHA-256 checksums and these packages:
+Pushing any Git tag starts the [release workflow](./.github/workflows/release.yml). Tags such as `v0.1.0`, `beta`, `nightly-2026-07-28`, and tags containing `/` are all accepted. After all jobs succeed, GitHub Actions creates a release with SHA-256 checksums and these packages:
 
 - macOS universal DMG and ZIP for Intel and Apple Silicon, signed with Developer ID, notarized by Apple, and stapled
 - Windows x64 NSIS installer
@@ -202,17 +202,14 @@ The macOS job intentionally fails instead of publishing an unsigned build when s
 base64 -i DeveloperIDApplication.p12 | pbcopy
 ```
 
-Create a release after updating and committing the package version:
+Create a release with any tag name:
 
 ```bash
-npm version patch --no-git-tag-version
-git add package.json package-lock.json
-git commit -m "release: v0.1.1"
-git tag v0.1.1
-git push origin main --follow-tags
+git tag nightly-2026-07-28
+git push origin nightly-2026-07-28
 ```
 
-Never commit certificates or passwords. electron-builder imports `APPLE_CERTIFICATE` into its own temporary keychain, so the existing `KEYCHAIN_PASSWORD` secret is not required by this workflow. `APPLE_PASSWORD` must be an app-specific password created at appleid.apple.com.
+The tag name controls the GitHub Release name; the application and installer version still come from `package.json`, because desktop package formats require a valid application version. Never commit certificates or passwords. electron-builder imports `APPLE_CERTIFICATE` into its own temporary keychain, so the existing `KEYCHAIN_PASSWORD` secret is not required by this workflow. `APPLE_PASSWORD` must be an app-specific password created at appleid.apple.com.
 
 ## Technology
 
