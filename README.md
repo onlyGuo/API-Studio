@@ -9,12 +9,13 @@ Build, organize, automate, and inspect HTTP APIs without sending your workspace 
 
 <img src="./docs/images/api-studio-icon.png" alt="API Studio icon" width="88" />
 
-[简体中文](./README_CN.md) · [Features](#features) · [Screenshots](#screenshots) · [Getting started](#getting-started)
+[Live Demo](https://onlyguo.github.io/API-Studio/) · [简体中文](./README_CN.md) · [Features](#features) · [Screenshots](#screenshots) · [Getting started](#getting-started)
 
 <img src="./docs/images/hero.png" alt="API Studio in dark and light themes" width="100%" />
 
 [![Local First](https://img.shields.io/badge/data-local--first-22a06b?style=flat-square)](#local-first-by-design)
-[![Electron](https://img.shields.io/badge/Electron-34-47848f?style=flat-square&logo=electron&logoColor=white)](https://www.electronjs.org/)
+[![Live Demo](https://img.shields.io/badge/live_demo-open_API_Studio-3574f0?style=flat-square&logo=github&logoColor=white)](https://onlyguo.github.io/API-Studio/)
+[![Electron](https://img.shields.io/badge/Electron-43-47848f?style=flat-square&logo=electron&logoColor=white)](https://www.electronjs.org/)
 [![Vue](https://img.shields.io/badge/Vue-3-42b883?style=flat-square&logo=vuedotjs&logoColor=white)](https://vuejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Monaco Editor](https://img.shields.io/badge/editor-Monaco-007acc?style=flat-square&logo=visualstudiocode&logoColor=white)](https://microsoft.github.io/monaco-editor/)

@@ -8,12 +8,13 @@
 
 <img src="./docs/images/api-studio-icon.png" alt="API Studio 图标" width="88" />
 
-[English](./README.md) · [功能介绍](#功能介绍) · [界面预览](#界面预览) · [快速开始](#快速开始)
+[在线示例](https://onlyguo.github.io/API-Studio/) · [English](./README.md) · [功能介绍](#功能介绍) · [界面预览](#界面预览) · [快速开始](#快速开始)
 
 <img src="./docs/images/hero.png" alt="API Studio 明色与暗色主题" width="100%" />
 
 [![Local First](https://img.shields.io/badge/数据-本地优先-22a06b?style=flat-square)](#数据不上云)
-[![Electron](https://img.shields.io/badge/Electron-34-47848f?style=flat-square&logo=electron&logoColor=white)](https://www.electronjs.org/)
+[![在线示例](https://img.shields.io/badge/在线示例-打开_API_Studio-3574f0?style=flat-square&logo=github&logoColor=white)](https://onlyguo.github.io/API-Studio/)
+[![Electron](https://img.shields.io/badge/Electron-43-47848f?style=flat-square&logo=electron&logoColor=white)](https://www.electronjs.org/)
 [![Vue](https://img.shields.io/badge/Vue-3-42b883?style=flat-square&logo=vuedotjs&logoColor=white)](https://vuejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Monaco Editor](https://img.shields.io/badge/编辑器-Monaco-007acc?style=flat-square&logo=visualstudiocode&logoColor=white)](https://microsoft.github.io/monaco-editor/)
